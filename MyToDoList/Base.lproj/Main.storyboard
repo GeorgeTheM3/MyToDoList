@@ -60,9 +60,9 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="taskColor" destination="eTn-qb-qki" id="4OO-NU-iY3"/>
                                     <outlet property="taskComment" destination="kB0-2C-CSz" id="9Td-OF-0dZ"/>
                                     <outlet property="taskName" destination="NPV-S5-j3d" id="cKT-vo-ExE"/>
-                                    <outlet property="tastColor" destination="eTn-qb-qki" id="4OO-NU-iY3"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -72,12 +72,12 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="My Tasks" id="gcX-4v-ag7">
-                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="compose" id="8Mm-dL-ITT"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="8CT-1u-E3l"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="8CT-1u-E3l">
+                            <connections>
+                                <action selector="addNewTask:" destination="JXL-b8-ZbZ" id="BaG-6H-ArJ"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="tableView" destination="KGx-eJ-bfB" id="sX7-lC-u4o"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LVy-km-uq6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -99,7 +99,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ttr-WT-Vim" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-8.6956521739130448" y="111.83035714285714"/>
+            <point key="canvasLocation" x="104" y="112"/>
         </scene>
     </scenes>
     <resources>

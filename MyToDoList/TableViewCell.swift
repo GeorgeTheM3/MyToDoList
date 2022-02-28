@@ -10,7 +10,7 @@ import UIKit
 class TableViewCell: UITableViewCell {
     @IBOutlet weak var taskName: UILabel!
     @IBOutlet weak var taskComment: UILabel!
-    @IBOutlet weak var tastColor: UILabel!
+    @IBOutlet weak var taskColor: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -19,7 +19,6 @@ class TableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
 
