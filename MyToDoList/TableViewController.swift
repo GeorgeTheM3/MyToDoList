@@ -40,8 +40,17 @@ class TableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let object = tasks[indexPath.row]
-        //TODO: Сделать изменение цвета по клику
+        let cell = tableView.cellForRow(at: indexPath) as! TableViewCell
+        if cell.taskColor.backgroundColor == .black {
+            cell.taskColor.backgroundColor = .systemGreen
+            cell.taskColor.text = "✓"
+        } else {
+            cell.taskColor.backgroundColor = .black
+            cell.taskColor.text = "DO"
+        }
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        
     }
 
     
@@ -49,11 +58,11 @@ class TableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "taskCell", for: indexPath) as! TableViewCell
         cell.taskName.text = tasks[indexPath.row].title
         cell.taskComment.text = tasks[indexPath.row].comment
+        cell.taskColor.textColor = .white
+        cell.taskColor.text = "DO"
         
         return cell
     }
-    
-
     
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -77,19 +86,6 @@ class TableViewController: UITableViewController {
         } catch let error as NSError {
             print(error.debugDescription)
         }
-    }
-    
-
-    
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-        
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
     }
     
     private func saveTask(withTitle title: String, withComment comment: String) {
