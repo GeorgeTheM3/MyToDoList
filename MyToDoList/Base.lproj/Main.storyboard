@@ -75,6 +75,9 @@
                         <barButtonItem key="leftBarButtonItem" style="plain" systemItem="compose" id="8Mm-dL-ITT"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="8CT-1u-E3l"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="KGx-eJ-bfB" id="sX7-lC-u4o"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LVy-km-uq6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

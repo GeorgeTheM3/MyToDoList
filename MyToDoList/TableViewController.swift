@@ -6,9 +6,12 @@
 //
 
 import UIKit
+import CoreData
 
 class TableViewController: UITableViewController {
-
+    
+    var context: NSManagedObjectContext!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 //        self.navigationItem.rightBarButtonItem = self.editButtonItem
