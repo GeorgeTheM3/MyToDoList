@@ -26,7 +26,6 @@ class TableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.leftBarButtonItem = self.editButtonItem
     }
 
     // MARK: - Table view data source
@@ -40,17 +39,15 @@ class TableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell = tableView.cellForRow(at: indexPath) as! TableViewCell
-        if cell.taskColor.backgroundColor == .black {
-            cell.taskColor.backgroundColor = .systemGreen
-            cell.taskColor.text = "✓"
+        let object = tasks[indexPath.row]
+        if !object.status {
+            object.status = true
         } else {
-            cell.taskColor.backgroundColor = .black
-            cell.taskColor.text = "DO"
+            object.status = false
         }
+        saveContext()
         tableView.deselectRow(at: indexPath, animated: true)
-        
-        
+        tableView.reloadData()
     }
 
     
@@ -61,18 +58,22 @@ class TableViewController: UITableViewController {
         cell.taskColor.textColor = .white
         cell.taskColor.text = "DO"
         
+        let object = tasks[indexPath.row]
+        if object.status {
+            cell.taskColor.backgroundColor = .systemGreen
+            cell.taskColor.text = "✓"
+        } else {
+            cell.taskColor.backgroundColor = .black
+            cell.taskColor.text = "DO"
+        }
+        
         return cell
     }
     
-    // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
         return true
     }
     
-
-    
-    // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let object = tasks[indexPath.row]
@@ -80,7 +81,10 @@ class TableViewController: UITableViewController {
             tasks.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
-        
+        saveContext()
+    }
+    
+    private func saveContext() {
         do {
             try context.save()
         } catch let error as NSError {
@@ -95,6 +99,7 @@ class TableViewController: UITableViewController {
         let taskObject = Task(entity: entity, insertInto: context)
         taskObject.title = title
         taskObject.comment = comment
+        taskObject.status = false
         
         do {
             try context.save()
@@ -104,15 +109,25 @@ class TableViewController: UITableViewController {
         }
     }
     
+    private func errorAlert() {
+        let allertController = UIAlertController(title: "Error", message: "Title can not be empty", preferredStyle: .alert)
+        
+        let ok = UIAlertAction(title: "OK", style: .destructive, handler: nil)
+        
+        allertController.addAction(ok)
+        
+        present(allertController, animated: true, completion: nil)
+    }
+    
     @IBAction func addNewTask(_ sender: UIBarButtonItem) {
-        let alertController = UIAlertController.init(title: "New", message: "Add new task", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "New", message: "Add new task", preferredStyle: .alert)
 
         let add = UIAlertAction(title: "Add", style: .default) { action in
             let textFieldTitle = alertController.textFields![0]
             let textFieldCommnet = alertController.textFields![1]
             if let taskTitle = textFieldTitle.text,
                let taskComment = textFieldCommnet.text {
-                guard !taskTitle.isEmpty else { return } // TODO: ошибка при пустом имени
+                guard !taskTitle.isEmpty else { return self.errorAlert()}
                 self.saveTask(withTitle: taskTitle, withComment: taskComment)
                 self.tableView.reloadData()
             }
