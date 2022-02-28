@@ -8,7 +8,10 @@
 import UIKit
 
 class TableViewCell: UITableViewCell {
-
+    @IBOutlet weak var taskName: UILabel!
+    @IBOutlet weak var taskComment: UILabel!
+    @IBOutlet weak var tastColor: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
