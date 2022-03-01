@@ -24,7 +24,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="74"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eTn-qb-qki">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eTn-qb-qki">
                                             <rect key="frame" x="20" y="11" width="50" height="50"/>
                                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
@@ -50,7 +50,7 @@
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="bottomMargin" secondItem="eTn-qb-qki" secondAttribute="bottom" id="3qc-TT-ctw"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="eTn-qb-qki" secondAttribute="bottom" constant="2" id="3qc-TT-ctw"/>
                                         <constraint firstItem="eTn-qb-qki" firstAttribute="top" secondItem="wda-lZ-UAB" secondAttribute="topMargin" id="Bb2-Iq-MSc"/>
                                         <constraint firstItem="kB0-2C-CSz" firstAttribute="leading" secondItem="eTn-qb-qki" secondAttribute="trailing" constant="10" id="KnP-ST-pdV"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="kB0-2C-CSz" secondAttribute="trailing" constant="10" id="V7U-Ku-16o"/>
