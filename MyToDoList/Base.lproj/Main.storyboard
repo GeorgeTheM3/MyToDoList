@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--My Tasks-->
+        <!--my tasks-->
         <scene sceneID="gxC-AM-lwe">
             <objects>
                 <tableViewController id="JXL-b8-ZbZ" customClass="TableViewController" customModule="MyToDoList" customModuleProvider="target" sceneMemberID="viewController">
@@ -24,11 +24,11 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="74"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eTn-qb-qki">
-                                            <rect key="frame" x="20" y="11" width="50" height="52"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eTn-qb-qki">
+                                            <rect key="frame" x="20" y="11" width="50" height="50"/>
                                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="50" id="7sV-pS-zud"/>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="7sV-pS-zud"/>
                                                 <constraint firstAttribute="width" constant="50" id="fDo-g5-2bc"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="30"/>
@@ -36,14 +36,14 @@
                                             <nil key="highlightedColor"/>
                                             <size key="shadowOffset" width="0.0" height="0.0"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Задача" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NPV-S5-j3d">
-                                            <rect key="frame" x="80" y="12" width="304" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Задача" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NPV-S5-j3d">
+                                            <rect key="frame" x="80" y="12" width="304" height="20.5"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Комментарий" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kB0-2C-CSz">
-                                            <rect key="frame" x="80" y="42" width="304" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Комментарий" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kB0-2C-CSz">
+                                            <rect key="frame" x="80" y="42.5" width="304" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -55,6 +55,7 @@
                                         <constraint firstItem="kB0-2C-CSz" firstAttribute="leading" secondItem="eTn-qb-qki" secondAttribute="trailing" constant="10" id="KnP-ST-pdV"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="kB0-2C-CSz" secondAttribute="trailing" constant="10" id="V7U-Ku-16o"/>
                                         <constraint firstItem="NPV-S5-j3d" firstAttribute="leading" secondItem="eTn-qb-qki" secondAttribute="trailing" constant="10" id="aAr-yY-psA"/>
+                                        <constraint firstItem="kB0-2C-CSz" firstAttribute="top" secondItem="NPV-S5-j3d" secondAttribute="bottom" constant="10" id="dRo-De-YUE"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="kB0-2C-CSz" secondAttribute="bottom" id="hBJ-Ep-B2i"/>
                                         <constraint firstItem="eTn-qb-qki" firstAttribute="leading" secondItem="wda-lZ-UAB" secondAttribute="leadingMargin" id="iDh-q3-Vse"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="NPV-S5-j3d" secondAttribute="trailing" constant="10" id="p3F-BS-6d6"/>
@@ -73,7 +74,7 @@
                             <outlet property="delegate" destination="JXL-b8-ZbZ" id="Lum-NF-Ith"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="My Tasks" id="gcX-4v-ag7">
+                    <navigationItem key="navigationItem" title="my tasks" id="gcX-4v-ag7">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="8CT-1u-E3l">
                             <connections>
                                 <action selector="addNewTask:" destination="JXL-b8-ZbZ" id="BaG-6H-ArJ"/>
@@ -93,6 +94,11 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="wJk-kU-vit">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="32"/>
+                            <color key="textColor" systemColor="systemBackgroundColor"/>
+                        </textAttributes>
+                        <navigationBarAppearance key="standardAppearance"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

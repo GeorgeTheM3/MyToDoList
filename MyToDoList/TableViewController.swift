@@ -39,15 +39,21 @@ class TableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath) as! TableViewCell
+
         let object = tasks[indexPath.row]
+        
         if !object.status {
+            cell.taskColor.backgroundColor = .systemGreen
+            cell.taskColor.text = "✓"
             object.status = true
         } else {
+            cell.taskColor.backgroundColor = .black
+            cell.taskColor.text = "DO"
             object.status = false
         }
         saveContext()
         tableView.deselectRow(at: indexPath, animated: true)
-        tableView.reloadData()
     }
 
     
@@ -127,7 +133,7 @@ class TableViewController: UITableViewController {
             let textFieldCommnet = alertController.textFields![1]
             if let taskTitle = textFieldTitle.text,
                let taskComment = textFieldCommnet.text {
-                guard !taskTitle.isEmpty else { return self.errorAlert()}
+                guard !taskTitle.isEmpty else { return self.errorAlert() }
                 self.saveTask(withTitle: taskTitle, withComment: taskComment)
                 self.tableView.reloadData()
             }
