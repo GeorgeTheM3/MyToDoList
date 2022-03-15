@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -76,6 +77,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="my tasks" id="gcX-4v-ag7">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="8CT-1u-E3l">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="addNewTask:" destination="JXL-b8-ZbZ" id="BaG-6H-ArJ"/>
                             </connections>
@@ -108,6 +110,79 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ttr-WT-Vim" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="104" y="112"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="RUM-bw-cYO">
+            <objects>
+                <pageViewController storyboardIdentifier="PageController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Yl0-XL-ClZ" customClass="PageViewController" customModule="MyToDoList" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GPF-B9-242" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="103" y="798"/>
+        </scene>
+        <!--Presentation View Controller-->
+        <scene sceneID="ueg-R0-9pt">
+            <objects>
+                <viewController storyboardIdentifier="ContentView" id="y2Y-Gj-Ot9" customClass="PresentationViewController" customModule="MyToDoList" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HLb-GP-Yfi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f6Z-MV-fB8">
+                                <rect key="frame" x="20" y="144" width="374" height="45.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="38"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🏂" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tVb-ii-6Zh">
+                                <rect key="frame" x="20" y="402" width="374" height="239"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="200"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="vXS-hG-XKC">
+                                <rect key="frame" x="20" y="786" width="374" height="26"/>
+                            </pageControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oV6-U4-BwO">
+                                <rect key="frame" x="155" y="691" width="104.5" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="1q0-sX-nMU"/>
+                                </constraints>
+                                <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Закрыть">
+                                    <fontDescription key="titleFontDescription" name="Arial-Black" family="Arial Black" pointSize="20"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="closeButtonPressed:" destination="y2Y-Gj-Ot9" eventType="touchUpInside" id="w7T-Dt-M5U"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="7v9-vo-P4l"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="vXS-hG-XKC" firstAttribute="leading" secondItem="7v9-vo-P4l" secondAttribute="leading" constant="20" id="01L-Qa-Jee"/>
+                            <constraint firstItem="7v9-vo-P4l" firstAttribute="bottom" secondItem="vXS-hG-XKC" secondAttribute="bottom" constant="50" id="2ZC-1y-uQF"/>
+                            <constraint firstItem="7v9-vo-P4l" firstAttribute="trailing" secondItem="f6Z-MV-fB8" secondAttribute="trailing" constant="20" id="8OM-uY-LZT"/>
+                            <constraint firstItem="oV6-U4-BwO" firstAttribute="top" secondItem="tVb-ii-6Zh" secondAttribute="bottom" constant="50" id="C6I-mN-O8Y"/>
+                            <constraint firstItem="oV6-U4-BwO" firstAttribute="centerX" secondItem="7v9-vo-P4l" secondAttribute="centerX" id="Cqr-Oh-YCK"/>
+                            <constraint firstItem="f6Z-MV-fB8" firstAttribute="top" secondItem="7v9-vo-P4l" secondAttribute="top" constant="100" id="VgG-6y-2eu"/>
+                            <constraint firstItem="7v9-vo-P4l" firstAttribute="trailing" secondItem="tVb-ii-6Zh" secondAttribute="trailing" constant="20" id="YBb-Ky-X2G"/>
+                            <constraint firstItem="vXS-hG-XKC" firstAttribute="top" secondItem="oV6-U4-BwO" secondAttribute="bottom" constant="35" id="f0l-Gr-om5"/>
+                            <constraint firstItem="f6Z-MV-fB8" firstAttribute="leading" secondItem="7v9-vo-P4l" secondAttribute="leading" constant="20" id="o7L-Ui-r4U"/>
+                            <constraint firstItem="7v9-vo-P4l" firstAttribute="trailing" secondItem="vXS-hG-XKC" secondAttribute="trailing" constant="20" id="p5g-cH-RjG"/>
+                            <constraint firstItem="tVb-ii-6Zh" firstAttribute="leading" secondItem="7v9-vo-P4l" secondAttribute="leading" constant="20" id="x2T-qb-qH4"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="button" destination="oV6-U4-BwO" id="5vL-4m-MAY"/>
+                        <outlet property="emoji" destination="tVb-ii-6Zh" id="9hJ-WR-hpd"/>
+                        <outlet property="label" destination="f6Z-MV-fB8" id="Tw1-33-0NO"/>
+                        <outlet property="pageControl" destination="vXS-hG-XKC" id="N3f-UZ-i7L"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D3c-hx-6hH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="900.00000000000011" y="797.54464285714278"/>
         </scene>
     </scenes>
     <resources>

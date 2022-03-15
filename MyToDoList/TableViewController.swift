@@ -12,6 +12,7 @@ class TableViewController: UITableViewController {
 
     var context: NSManagedObjectContext!
     var tasks: [Task] = []
+    var pageViewController = PageViewController()
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -26,6 +27,7 @@ class TableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        startPresentatiion()
     }
 
     // MARK: - Table view data source
@@ -149,4 +151,31 @@ class TableViewController: UITableViewController {
         present(alertController, animated: true, completion: nil)
     }
     
+    func startPresentatiion () {
+        
+        let userDefaults = UserDefaults.standard
+        let presentationWasViewed = userDefaults.bool(forKey: "PresentetionWasViewed55")
+        if presentationWasViewed == false {
+                if let pageViewController = storyboard?.instantiateViewController(withIdentifier: "PageController") as? PageViewController {
+                present(pageViewController, animated: true, completion: nil)
+            }
+        }
+    }
+    
+}
+
+extension PageViewController: UIPageViewControllerDataSource {
+    func pageViewController(_ pageViewController: UIPageViewController,
+                            viewControllerBefore viewController: UIViewController) -> UIViewController? {
+        var pageNumber = (viewController as! PresentationViewController).currentPage
+        pageNumber -= 1
+        return showViewControllerAtIndex(pageNumber)
+    }
+    
+    func pageViewController(_ pageViewController: UIPageViewController,
+                            viewControllerAfter viewController: UIViewController) -> UIViewController? {
+        var pageNumber = (viewController as! PresentationViewController).currentPage
+        pageNumber += 1
+        return showViewControllerAtIndex(pageNumber)
+    }
 }

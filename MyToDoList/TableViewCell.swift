@@ -8,6 +8,7 @@
 import UIKit
 
 class TableViewCell: UITableViewCell {
+    
     @IBOutlet weak var taskName: UILabel!
     @IBOutlet weak var taskComment: UILabel!
     @IBOutlet weak var taskColor: UILabel!
@@ -23,3 +24,5 @@ class TableViewCell: UITableViewCell {
     }
 
 }
+
+

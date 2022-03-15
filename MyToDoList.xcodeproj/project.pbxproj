@@ -15,6 +15,8 @@
 		5E58FC6427CBF99D002F0FA0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E58FC6227CBF99D002F0FA0 /* LaunchScreen.storyboard */; };
 		5E58FC6C27CBF9FD002F0FA0 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E58FC6B27CBF9FD002F0FA0 /* TableViewController.swift */; };
 		5E58FC6E27CBFAB0002F0FA0 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E58FC6D27CBFAB0002F0FA0 /* TableViewCell.swift */; };
+		5E823E8C27E106400067E69B /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E823E8B27E106400067E69B /* PageViewController.swift */; };
+		5E823E8E27E106D60067E69B /* PresentationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E823E8D27E106D60067E69B /* PresentationViewController.swift */; };
 		5EA7908327CCB6CB00E2372F /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA7908227CCB6CB00E2372F /* CoreDataStack.swift */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +31,8 @@
 		5E58FC6527CBF99D002F0FA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5E58FC6B27CBF9FD002F0FA0 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		5E58FC6D27CBFAB0002F0FA0 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		5E823E8B27E106400067E69B /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		5E823E8D27E106D60067E69B /* PresentationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationViewController.swift; sourceTree = "<group>"; };
 		5EA7908227CCB6CB00E2372F /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -67,6 +71,8 @@
 				5E58FC5627CBF99C002F0FA0 /* SceneDelegate.swift */,
 				5E58FC6B27CBF9FD002F0FA0 /* TableViewController.swift */,
 				5E58FC6D27CBFAB0002F0FA0 /* TableViewCell.swift */,
+				5E823E8D27E106D60067E69B /* PresentationViewController.swift */,
+				5E823E8B27E106400067E69B /* PageViewController.swift */,
 				5E58FC5A27CBF99C002F0FA0 /* Main.storyboard */,
 				5E58FC6027CBF99D002F0FA0 /* Assets.xcassets */,
 				5E58FC6227CBF99D002F0FA0 /* LaunchScreen.storyboard */,
@@ -148,8 +154,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E58FC6E27CBFAB0002F0FA0 /* TableViewCell.swift in Sources */,
+				5E823E8C27E106400067E69B /* PageViewController.swift in Sources */,
 				5E58FC5527CBF99C002F0FA0 /* AppDelegate.swift in Sources */,
 				5E58FC5727CBF99C002F0FA0 /* SceneDelegate.swift in Sources */,
+				5E823E8E27E106D60067E69B /* PresentationViewController.swift in Sources */,
 				5EA7908327CCB6CB00E2372F /* CoreDataStack.swift in Sources */,
 				5E58FC5F27CBF99C002F0FA0 /* MyToDoList.xcdatamodeld in Sources */,
 				5E58FC6C27CBF9FD002F0FA0 /* TableViewController.swift in Sources */,
