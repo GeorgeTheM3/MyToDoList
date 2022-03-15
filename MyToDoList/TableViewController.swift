@@ -154,7 +154,7 @@ class TableViewController: UITableViewController {
     func startPresentatiion () {
         
         let userDefaults = UserDefaults.standard
-        let presentationWasViewed = userDefaults.bool(forKey: "PresentetionWasViewed55")
+        let presentationWasViewed = userDefaults.bool(forKey: "PresentetionWasViewed")
         if presentationWasViewed == false {
                 if let pageViewController = storyboard?.instantiateViewController(withIdentifier: "PageController") as? PageViewController {
                 present(pageViewController, animated: true, completion: nil)

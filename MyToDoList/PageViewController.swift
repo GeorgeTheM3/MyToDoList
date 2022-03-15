@@ -24,8 +24,8 @@ class PageViewController: UIPageViewController {
         
         dataSource = self
         
-        if let contentViewController = showViewControllerAtIndex(0){
-            setViewControllers([contentViewController], direction: .forward, animated: true, completion: nil)
+        if let presentViewController = showViewControllerAtIndex(0){
+            setViewControllers([presentViewController], direction: .forward, animated: true, completion: nil)
         }
     }
     
@@ -33,16 +33,16 @@ class PageViewController: UIPageViewController {
         guard index >= 0 else { return nil}
         guard index < presentScreenContent.count else {
             let userDefaults = UserDefaults.standard
-            userDefaults.set(true, forKey: "PresentetionWasViewed5")
+            userDefaults.set(true, forKey: "PresentetionWasViewed")
             return nil }
-        guard let contentViewController = storyboard?.instantiateViewController(
-            withIdentifier: "ContentView") as? PresentationViewController else { return nil }
+        guard let presentViewController = storyboard?.instantiateViewController(
+            withIdentifier: "PresentationView") as? PresentationViewController else { return nil }
         
-        contentViewController.contentLabel = presentScreenContent[index]
-        contentViewController.contentEmoji = emojiArray[index]
-        contentViewController.currentPage = index
-        contentViewController.numberOfPages = presentScreenContent.count
+        presentViewController.contentLabel = presentScreenContent[index]
+        presentViewController.contentEmoji = emojiArray[index]
+        presentViewController.currentPage = index
+        presentViewController.numberOfPages = presentScreenContent.count
         
-        return contentViewController
+        return presentViewController
     }
 }
